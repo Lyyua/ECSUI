@@ -37,9 +37,11 @@ public class PauseButtonBehaviour : MonoBehaviour, IPauseListener
         }
         else
         {
+            _contexts.uI.ReplaceTick(_contexts.uI.jumpInTime.targetTick);
             _contexts.uI.isPause = false;
             _contexts.uI.isPause = true;
             _contexts.uI.isPause = false;
+
         }
     }
 }

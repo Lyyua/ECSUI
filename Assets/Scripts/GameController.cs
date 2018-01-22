@@ -35,6 +35,7 @@ public class GameController : MonoBehaviour
             .Add(new NotifyElixirListenerSystem(contexts))
                 .Add(new TimePickSystem(contexts))
               .Add(new ConsumeElixirSystem(contexts))
+              .Add(new CleanUpConsumptionHistorySystem(contexts))
             ;
     }
 }

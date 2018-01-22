@@ -27,7 +27,7 @@ public class NotifyPauseListenerSystem : ReactiveSystem<UIEntity>
 
     /// <summary>
     /// 这一块需要注意，不论isPause为true 还是false，我们都要进行监听的回调
-    ///     通过以下的重置操作，可以使得过滤器响应false操作，相比之下，我宁愿在一个Component中定义一个字段，通过Replace来进行响应
+    ///     通过以下的重置操作，可以使得过滤器响应false操作，否则false的操作不会响应，相比之下，我宁愿在一个Component中定义一个字段，通过Replace来进行响应
     ///    _contexts.uI.isPause = false;
     ///    _contexts.uI.isPause = true;
     ///    _contexts.uI.isPause = false;
