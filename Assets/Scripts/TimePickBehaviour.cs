@@ -29,15 +29,16 @@ public class TimePickBehaviour : MonoBehaviour, IPauseListener
 
     public void PauseStateChanged(bool isPause)
     {
+        this.gameObject.SetActive(isPause);
         if (isPause)
         {
             jumpInTime = _contexts.uI.CreateEntity();
+            slider.enabled = true;
             slider.value = 1;
         }
         else
         {
             jumpInTime.Destroy();
         }
-        this.gameObject.SetActive(isPause);
     }
 }
