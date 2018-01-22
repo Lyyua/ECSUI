@@ -21,6 +21,7 @@ public class TimePickSystem : ReactiveSystem<UIEntity>
         int t = (int)e.jumpInTime.targetTick;
         float amount = _contexts.uI.consumptionHistory.historyCosump[t].amount;
         _contexts.uI.ReplaceElixir(amount);
+        _contexts.uI.jumpInTimeEntity.tickListener.listener.TickChanged(e.jumpInTime.targetTick);
     }
 
     protected override bool Filter(UIEntity entity)

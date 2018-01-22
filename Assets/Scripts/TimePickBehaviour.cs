@@ -9,7 +9,7 @@ public class TimePickBehaviour : MonoBehaviour, IPauseListener
     private Slider slider;
     Contexts _contexts;
 
-    UIEntity jumpInTime;
+    UIEntity jumpInTime = null;
 
     private void Awake()
     {
@@ -32,13 +32,22 @@ public class TimePickBehaviour : MonoBehaviour, IPauseListener
         this.gameObject.SetActive(isPause);
         if (isPause)
         {
-            jumpInTime = _contexts.uI.CreateEntity();
+            if (_contexts.uI.hasJumpInTime)
+            {
+                jumpInTime = _contexts.uI.jumpInTimeEntity;
+            }
+            else
+            {
+                jumpInTime = _contexts.uI.CreateEntity();
+            }
             slider.enabled = true;
             slider.value = 1;
+            ChangeValue(1);
         }
         else
         {
             jumpInTime.Destroy();
+            jumpInTime = null;
         }
     }
 }

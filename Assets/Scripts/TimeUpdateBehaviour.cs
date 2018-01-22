@@ -4,7 +4,7 @@ using System.Collections;
 using System;
 using UnityEngine.UI;
 
-public class TimeUpdateBehaviour : MonoBehaviour, ITickListener
+public class TimeUpdateBehaviour : MonoBehaviour, ITickListener, IPauseListener
 {
     Contexts _contexts;
     public Text timeText;
@@ -15,11 +15,22 @@ public class TimeUpdateBehaviour : MonoBehaviour, ITickListener
         _contexts = Contexts.sharedInstance;
         var e = _contexts.uI.CreateEntity();
         e.AddTickListener(this);
+        e.AddPauseListener(this);
     }
 
     public void PauseStateChanged(bool isPause)
     {
-
+        if (isPause)
+        {
+            if (!_contexts.uI.hasJumpInTime)
+            {
+                _contexts.uI.CreateEntity().AddTickListener(this);
+            }
+            else
+            {
+                _contexts.uI.jumpInTimeEntity.AddTickListener(this);
+            }
+        }
     }
 
     public void TickChanged(long tick)
