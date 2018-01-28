@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Entitas;
+using UnityEngine;
 
 /// <summary>
 /// 消费水晶时触发  
@@ -20,7 +21,8 @@ public class ConsumeElixirSystem : ReactiveSystem<UIEntity>
         {
             var newAmount = _contexts.uI.elixir.amount - item.consumpElixir.amount;
             _contexts.uI.ReplaceElixir(newAmount);
-            item.Destroy();
+            Debug.Log(item.consumpElixir.amount);
+            item.isDestroy = true;
         }
     }
 
