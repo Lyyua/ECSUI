@@ -10,12 +10,17 @@ public class ConsumpButtonBehaviour : MonoBehaviour, IPauseListener, IElixirList
 
     [SerializeField]
     private int consumptionAmount = 3;
-
+    [SerializeField]
+    private string skillName = "";
     UIEntity consumpEntity;
     Image _image;
+    [SerializeField]
+    Text _skillText;
+
     private void Awake()
     {
         _image = GetComponent<Image>();
+        _skillText.text = skillName;
         _contexts = Contexts.sharedInstance;
         consumpEntity = _contexts.uI.CreateEntity();
         consumpEntity.AddElixirListener(this);
@@ -34,6 +39,8 @@ public class ConsumpButtonBehaviour : MonoBehaviour, IPauseListener, IElixirList
     public void ButtonPressed()
     {
         if (_image.fillAmount < 1) return;
-        _contexts.uI.CreateEntity().AddConsumpElixir(consumptionAmount);
+        var e = _contexts.uI.CreateEntity();
+        e.AddConsumpElixir(consumptionAmount);
+        e.AddConsumpName(skillName);
     }
 }
