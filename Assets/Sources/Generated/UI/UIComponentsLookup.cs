@@ -9,20 +9,24 @@
 public static class UIComponentsLookup {
 
     public const int ConsumpElixir = 0;
-    public const int ConsumptionHistory = 1;
-    public const int Elixir = 2;
-    public const int ElixirListener = 3;
-    public const int JumpInTime = 4;
-    public const int Pause = 5;
-    public const int PauseListener = 6;
-    public const int Tick = 7;
-    public const int TickListener = 8;
+    public const int ConsumpName = 1;
+    public const int ConsumptionHistory = 2;
+    public const int Destroy = 3;
+    public const int Elixir = 4;
+    public const int ElixirListener = 5;
+    public const int JumpInTime = 6;
+    public const int Pause = 7;
+    public const int PauseListener = 8;
+    public const int Tick = 9;
+    public const int TickListener = 10;
 
-    public const int TotalComponents = 9;
+    public const int TotalComponents = 11;
 
     public static readonly string[] componentNames = {
         "ConsumpElixir",
+        "ConsumpName",
         "ConsumptionHistory",
+        "Destroy",
         "Elixir",
         "ElixirListener",
         "JumpInTime",
@@ -34,7 +38,9 @@ public static class UIComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(ConsumpElixirComponent),
+        typeof(ConsumpNameComponent),
         typeof(ConsumptionHistoryComponent),
+        typeof(DestroyComponent),
         typeof(ElixirComponent),
         typeof(ElixirListenerComponent),
         typeof(JumpInTimeComponent),
