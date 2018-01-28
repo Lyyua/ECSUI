@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
                   .Add(new ConsumeElixirLogSystem(contexts))
               .Add(new ConsumeElixirSystem(contexts))
               .Add(new CleanUpConsumptionHistorySystem(contexts))
-                .Add(new DestroySystem(contexts))
+               .Add(new DestroySystem(contexts))
             ;
     }
 }
