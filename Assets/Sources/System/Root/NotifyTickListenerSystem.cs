@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Entitas;
 
 /// <summary>
-/// 记录帧
+/// 帧数变化回调
 /// </summary>
 public class NotifyTickListenerSystem : ReactiveSystem<UIEntity>
 {

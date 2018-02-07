@@ -4,7 +4,7 @@ using Entitas;
 using UnityEngine;
 
 /// <summary>
-/// 记录帧
+/// 暂停回调
 /// </summary>
 public class NotifyPauseListenerSystem : ReactiveSystem<UIEntity>
 {

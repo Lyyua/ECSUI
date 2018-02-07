@@ -3,7 +3,7 @@ using Entitas.CodeGeneration.Attributes;
 using System.Collections.Generic;
 
 /// <summary>
-/// 需要的水晶数
+///   销毁组件
 /// </summary>
 [UI]
 public class DestroyComponent : IComponent

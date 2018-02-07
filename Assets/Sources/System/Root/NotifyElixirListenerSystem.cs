@@ -4,7 +4,7 @@ using Entitas;
 using UnityEngine;
 
 /// <summary>
-/// 响应水晶数量变化，图标更新
+/// 消费水晶回调
 /// </summary>
 public class NotifyElixirListenerSystem : ReactiveSystem<UIEntity>
 {
