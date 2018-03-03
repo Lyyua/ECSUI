@@ -1,4 +1,10 @@
+官方油管视频介绍ECS在UI上的一个应用，不过官网没有给出Demo，于是照着做了一个。
+
 流程简介：随着时间的增加，不断的生产水晶，水晶充足时可以释放技能。暂停后，可以选择时间戳定位到某个时刻的记录，并且从当前时刻继续流程。
+
+如下图
+
+![](UI.png)
 
 总水晶
 >* ElixirComponent
@@ -29,7 +35,7 @@
 销毁组件
 >* DestroyComponent
 >* 参与响应的System 
->* DestroySystem 销毁集中在一帧处理
+>>* DestroySystem 销毁集中在一帧处理
 
 暂停
 >* PauseComponent
